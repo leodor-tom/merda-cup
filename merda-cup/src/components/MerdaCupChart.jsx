@@ -1,98 +1,126 @@
 import { Chart } from "primereact/chart";
 import { useEffect, useState } from "react";
+import "../App.css";
 
 const MerdaCupChart = () => {
   const [chartDataBar, setchartDataBar] = useState({});
   const [chartOptionsBar, setchartOptionsBar] = useState({});
+  const [chartData, setChartData] = useState({});
+  const [chartOptions, setChartOptions] = useState({});
 
   useEffect(() => {
     const documentStyleBar = getComputedStyle(document.documentElement);
     const textColorBar = documentStyleBar.getPropertyValue("--text-color");
     const textColorSecondaryBar = documentStyleBar.getPropertyValue("--text-color-secondary");
     const surfaceBorderBar = documentStyleBar.getPropertyValue("--surface-border");
+    const red500 = documentStyleBar.getPropertyValue("--red-500");
+    const green500 = documentStyleBar.getPropertyValue("--green-500");
+    const yellow500 = documentStyleBar.getPropertyValue("--yellow-500");
+    const bluegray500 = documentStyleBar.getPropertyValue("--bluegray-500");
+    const blue500 = documentStyleBar.getPropertyValue("--blue-500");
+    const violet500 = documentStyleBar.getPropertyValue("--violet-500");
+    const cyan500 = documentStyleBar.getPropertyValue("--cyan-500");
+    const pink500 = documentStyleBar.getPropertyValue("--pink-500");
+    const orange500 = documentStyleBar.getPropertyValue("--orange-500");
+    const lime500 = documentStyleBar.getPropertyValue("--lime-500");
+    const purple500 = documentStyleBar.getPropertyValue("--purple-500");
+
+    console.log("Colors for Bar Chart:", { red500, green500, yellow500, bluegray500, blue500, violet500, cyan500 });
+
     const dataBar = {
       labels: ["09/05", "10/05", "11/05", "12/05", "13/05", "14/05", "15/05", "16/05", "17/05", "18/05", "19/05"],
       datasets: [
         {
           label: "Edoardo",
           fill: false,
-          borderColor: documentStyleBar.getPropertyValue("--blue-500"),
+          borderColor: red500,
+          backgroundColor: red500,
           tension: 0.4,
           data: [2, 4, 3, 5, 4, 4, 3, 2, 1, 1, 3],
         },
         {
           label: "Beppe",
           fill: false,
-          borderColor: documentStyleBar.getPropertyValue("--green-500"),
+          borderColor: green500,
+          backgroundColor: green500,
           tension: 0.4,
           data: [2, 2, 3, 3, 4, 5, 5, 2, 4, 2, 3],
         },
         {
           label: "Ivan",
           fill: false,
-          borderColor: documentStyleBar.getPropertyValue("--red-500"),
+          borderColor: yellow500,
+          backgroundColor: yellow500,
           tension: 0.4,
           data: [1, 2, 2, 5, 2, 3, 2, 3, 1, 3, 3],
         },
         {
           label: "Tommy",
           fill: false,
-          borderColor: documentStyleBar.getPropertyValue("--violet-500"),
+          borderColor: blue500,
+          backgroundColor: blue500,
           tension: 0.4,
           data: [0, 2, 2, 4, 1, 3, 3, 3, 3, 2, 2],
         },
         {
           label: "Baba Yaga",
           fill: false,
-          borderColor: documentStyleBar.getPropertyValue("--green-500"),
+          borderColor: bluegray500,
+          backgroundColor: bluegray500,
           tension: 0.4,
           data: [1, 0, 2, 2, 1, 1, 0, 0, 0, 1, 0],
         },
         {
           label: "Mattia",
           fill: false,
-          borderColor: documentStyleBar.getPropertyValue("--green-500"),
+          borderColor: violet500,
+          backgroundColor: violet500,
           tension: 0.4,
           data: [1, 1, 2, 2, 2, 2, 2, 1, 1, 3, 1],
         },
         {
           label: "Michele",
           fill: false,
-          borderColor: documentStyleBar.getPropertyValue("--green-500"),
+          borderColor: cyan500,
+          backgroundColor: cyan500,
           tension: 0.4,
           data: [0, 1, 1, 1, 3, 2, 2, 2, 2, 0, 1],
         },
         {
           label: "Danilo",
           fill: false,
-          borderColor: documentStyleBar.getPropertyValue("--green-500"),
+          borderColor: pink500,
+          backgroundColor: pink500,
           tension: 0.4,
           data: [0, 1, 1, 2, 1, 2, 2, 1, 0, 0, 1],
         },
         {
           label: "Fabri Calabria",
           fill: false,
-          borderColor: documentStyleBar.getPropertyValue("--green-500"),
+          borderColor: orange500,
+          backgroundColor: orange500,
           tension: 0.4,
           data: [1, 1, 3, 1, 2, 1, 1, 0, 1, 1, 0],
         },
         {
           label: "Andrea",
           fill: false,
-          borderColor: documentStyleBar.getPropertyValue("--green-500"),
+          borderColor: lime500,
+          backgroundColor: lime500,
           tension: 0.4,
           data: [1, 1, 2, 2, 0, 1, 1, 0, 1, 1, 1],
         },
         {
           label: "Biondo",
           fill: false,
-          borderColor: documentStyleBar.getPropertyValue("--green-500"),
-
+          borderColor: purple500,
+          backgroundColor: purple500,
           tension: 0.4,
           data: [1, 2, 1, 1, 4, 2, 1, 2, 2, 2, 1],
         },
       ],
     };
+
     const optionsBar = {
       responsive: true,
       maintainAspectRatio: false,
@@ -100,7 +128,7 @@ const MerdaCupChart = () => {
       plugins: {
         legend: {
           labels: {
-            fontColor: textColorBar,
+            color: textColorBar,
           },
         },
       },
@@ -140,8 +168,6 @@ const MerdaCupChart = () => {
     setchartDataBar(dataBar);
     setchartOptionsBar(optionsBar);
   }, []);
-  const [chartData, setChartData] = useState({});
-  const [chartOptions, setChartOptions] = useState({});
 
   useEffect(() => {
     const documentStyle = getComputedStyle(document.documentElement);
@@ -153,50 +179,90 @@ const MerdaCupChart = () => {
     const blue500 = documentStyle.getPropertyValue("--blue-500");
     const violet500 = documentStyle.getPropertyValue("--violet-500");
     const cyan500 = documentStyle.getPropertyValue("--cyan-500");
+    const pink500 = documentStyle.getPropertyValue("--pink-500");
+    const orange500 = documentStyle.getPropertyValue("--orange-500");
+    const lime500 = documentStyle.getPropertyValue("--lime-500");
+    const purple500 = documentStyle.getPropertyValue("--purple-500");
+
+    console.log("Colors:", { red500, green500, yellow500, bluegray500, blue500, violet500, cyan500 });
+
+    const labels = [
+      "Edoardo",
+      "Beppe",
+      "Ivan",
+      "Tommy",
+      "Baba Yaga",
+      "Mattia",
+      "Michele",
+      "Danilo",
+      "Fabri Calabria",
+      "Andrea",
+      "Biondo",
+    ];
+
+    const dataValues = [32, 35, 27, 25, 8, 18, 15, 12, 12, 11, 19];
+    const backgroundColors = [
+      red500,
+      green500,
+      yellow500,
+      bluegray500,
+      blue500,
+      violet500,
+      cyan500,
+      pink500,
+      orange500,
+      lime500,
+      purple500,
+    ];
+
+    // Combine the labels, values, and colors into a single array of objects
+    const combinedData = labels.map((label, index) => ({
+      label,
+      value: dataValues[index],
+      backgroundColor: backgroundColors[index],
+    }));
+
+    // Sort the combined data by value in descending order
+    combinedData.sort((a, b) => b.value - a.value);
+
+    // Extract the sorted labels, values, and colors
+    const sortedLabels = combinedData.map(item => item.label);
+    const sortedValues = combinedData.map(item => item.value);
+    const sortedBackgroundColors = combinedData.map(item => item.backgroundColor);
+
     const data = {
+      labels: sortedLabels,
       datasets: [
         {
-          data: [32, 35, 27, 25, 8, 18, 15, 12, 12, 11, 19],
-          backgroundColor: [
-            red500,
-            green500,
-            yellow500,
-            bluegray500,
-            blue500,
-            violet500,
-            cyan500,
-            blue500,
-            blue500,
-            blue500,
-            blue500,
-          ],
+          data: sortedValues,
+          backgroundColor: sortedBackgroundColors,
           label: "Cagate",
         },
       ],
-      labels: [
-        "Edoardo",
-        "Beppe",
-        "Ivan",
-        "Tommy",
-        "Baba Yaga",
-        "Mattia",
-        "Michele",
-        "Danilo",
-        "Fabri Calabria",
-        "Andrea",
-        "Biondo",
-      ],
     };
+
     const options = {
+      indexAxis: "y", // This makes the chart vertical
       plugins: {
         legend: {
-          labels: {
-            color: textColor,
-          },
+          display: false, // Hide legend
         },
       },
       scales: {
-        r: {
+        x: {
+          ticks: {
+            color: textColor,
+            beginAtZero: true,
+            precision: 0, // Ensure only integers are shown
+          },
+          grid: {
+            display: false,
+          },
+        },
+        y: {
+          ticks: {
+            color: textColor,
+          },
           grid: {
             color: "black",
           },
@@ -207,6 +273,7 @@ const MerdaCupChart = () => {
     setChartData(data);
     setChartOptions(options);
   }, []);
+
   return (
     <>
       <div className="card">
@@ -214,14 +281,13 @@ const MerdaCupChart = () => {
         <Chart type="bar" data={chartDataBar} options={chartOptionsBar} />
       </div>
       <div
-        className="card "
-        style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "5rem" }}
+        className="card"
+        style={{ display: "flex", justifyContent: "center", alignItems: "center", marginBlock: "5rem" }}
       >
         <div>
-          <h2 style={{ textAlign: "center", color: "brown" }}>Cagate Totali </h2>
+          <h2 style={{ textAlign: "center", color: "brown" }}>Cagate Totali</h2>
         </div>
-
-        <Chart type="polarArea" data={chartData} options={chartOptions} style={{ position: "block", width: "40%" }} />
+        <Chart type="bar" data={chartData} options={chartOptions} style={{ position: "block", width: "60%" }} />
       </div>
     </>
   );

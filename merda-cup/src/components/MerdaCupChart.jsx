@@ -7,6 +7,17 @@ const MerdaCupChart = () => {
   const [chartOptionsBar, setchartOptionsBar] = useState({});
   const [chartData, setChartData] = useState({});
   const [chartOptions, setChartOptions] = useState({});
+  const Edoardo = 32 + 17;
+  const Beppe = 35 + 16;
+  const Ivan = 27 + 16;
+  const Tommy = 25 + 14;
+  const BabaYaga = 8 + 6;
+  const Mattia = 18 + 12;
+  const Michele = 15 + 7;
+  const Danilo = 12 + 3;
+  const FabriCalabria = 12 + 2;
+  const Andrea = 11 + 5;
+  const Biondo = 19 + 10;
 
   useEffect(() => {
     const documentStyleBar = getComputedStyle(document.documentElement);
@@ -28,7 +39,7 @@ const MerdaCupChart = () => {
     console.log("Colors for Bar Chart:", { red500, green500, yellow500, bluegray500, blue500, violet500, cyan500 });
 
     const dataBar = {
-      labels: ["09/05", "10/05", "11/05", "12/05", "13/05", "14/05", "15/05", "16/05", "17/05", "18/05", "19/05"],
+      labels: ["20/05", "21/05", "22/05", "22/05", "24/05", "25/05", "26/05"],
       datasets: [
         {
           label: "Edoardo",
@@ -36,7 +47,7 @@ const MerdaCupChart = () => {
           borderColor: red500,
           backgroundColor: red500,
           tension: 0.4,
-          data: [2, 4, 3, 5, 4, 4, 3, 2, 1, 1, 3],
+          data: [3, 1, 3, 2, 2, 3, 3],
         },
         {
           label: "Beppe",
@@ -44,7 +55,7 @@ const MerdaCupChart = () => {
           borderColor: green500,
           backgroundColor: green500,
           tension: 0.4,
-          data: [2, 2, 3, 3, 4, 5, 5, 2, 4, 2, 3],
+          data: [3, 2, 2, 1, 2, 3, 3],
         },
         {
           label: "Ivan",
@@ -52,7 +63,7 @@ const MerdaCupChart = () => {
           borderColor: yellow500,
           backgroundColor: yellow500,
           tension: 0.4,
-          data: [1, 2, 2, 5, 2, 3, 2, 3, 1, 3, 3],
+          data: [2, 4, 2, 1, 1, 2, 4],
         },
         {
           label: "Tommy",
@@ -60,7 +71,7 @@ const MerdaCupChart = () => {
           borderColor: blue500,
           backgroundColor: blue500,
           tension: 0.4,
-          data: [0, 2, 2, 4, 1, 3, 3, 3, 3, 2, 2],
+          data: [2, 2, 3, 3, 3, 2, 2],
         },
         {
           label: "Baba Yaga",
@@ -68,7 +79,7 @@ const MerdaCupChart = () => {
           borderColor: bluegray500,
           backgroundColor: bluegray500,
           tension: 0.4,
-          data: [1, 0, 2, 2, 1, 1, 0, 0, 0, 1, 0],
+          data: [2, 1, 1, 0, 1, 0, 1],
         },
         {
           label: "Mattia",
@@ -76,7 +87,7 @@ const MerdaCupChart = () => {
           borderColor: violet500,
           backgroundColor: violet500,
           tension: 0.4,
-          data: [1, 1, 2, 2, 2, 2, 2, 1, 1, 3, 1],
+          data: [1, 2, 2, 2, 1, 2, 2],
         },
         {
           label: "Michele",
@@ -84,7 +95,7 @@ const MerdaCupChart = () => {
           borderColor: cyan500,
           backgroundColor: cyan500,
           tension: 0.4,
-          data: [0, 1, 1, 1, 3, 2, 2, 2, 2, 0, 1],
+          data: [2, 1, 0, 1, 0, 2, 1],
         },
         {
           label: "Danilo",
@@ -92,7 +103,7 @@ const MerdaCupChart = () => {
           borderColor: pink500,
           backgroundColor: pink500,
           tension: 0.4,
-          data: [0, 1, 1, 2, 1, 2, 2, 1, 0, 0, 1],
+          data: [1, 0, 1, 0, 1, 0, 0],
         },
         {
           label: "Fabri Calabria",
@@ -100,7 +111,7 @@ const MerdaCupChart = () => {
           borderColor: orange500,
           backgroundColor: orange500,
           tension: 0.4,
-          data: [1, 1, 3, 1, 2, 1, 1, 0, 1, 1, 0],
+          data: [1, 1, 0, 0, 0, 0, 0],
         },
         {
           label: "Andrea",
@@ -108,7 +119,7 @@ const MerdaCupChart = () => {
           borderColor: lime500,
           backgroundColor: lime500,
           tension: 0.4,
-          data: [1, 1, 2, 2, 0, 1, 1, 0, 1, 1, 1],
+          data: [0, 2, 1, 0, 1, 1, 0],
         },
         {
           label: "Biondo",
@@ -116,7 +127,7 @@ const MerdaCupChart = () => {
           borderColor: purple500,
           backgroundColor: purple500,
           tension: 0.4,
-          data: [1, 2, 1, 1, 4, 2, 1, 2, 2, 2, 1],
+          data: [2, 1, 1, 2, 2, 1, 1],
         },
       ],
     };
@@ -200,7 +211,7 @@ const MerdaCupChart = () => {
       "Biondo",
     ];
 
-    const dataValues = [32, 35, 27, 25, 8, 18, 15, 12, 12, 11, 19];
+    const dataValues = [Edoardo, Beppe, Ivan, Tommy, BabaYaga, Mattia, Michele, Danilo, FabriCalabria, Andrea, Biondo];
     const backgroundColors = [
       red500,
       green500,
@@ -277,7 +288,7 @@ const MerdaCupChart = () => {
   return (
     <>
       <div className="card">
-        <h2 style={{ textAlign: "center", color: "brown" }}>Dal 09/05 al 19/05 </h2>
+        <h2 style={{ textAlign: "center", color: "brown" }}>Dal 20/05 al 26/05 </h2>
         <Chart type="bar" data={chartDataBar} options={chartOptionsBar} />
       </div>
       <div
